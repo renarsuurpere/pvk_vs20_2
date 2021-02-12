@@ -20,4 +20,10 @@ class Page
         $this->db->execute();
     }
 
+    public function getOneUser(){
+        $this->db->query('SELECT * FROM users WHERE id=:id');
+        $this->db->bind('id', 1);
+        return $this->db->getOne();
+    }
+
 }
